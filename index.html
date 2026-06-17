@@ -3,69 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SentiX - 卫星数据分析可视化平台</title>
+    <title>SentiX | Global Land Change Analysis</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, sans-serif;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
         }
+
+        :root {
+            --bg-dark: #07101f;
+            --bg-card: rgba(25, 40, 65, 0.55);
+            --primary: #3b9aff;
+            --primary-light: #73bfff;
+            --text-main: #e6edf7;
+            --text-secondary: #a0b4cd;
+            --border-color: rgba(59, 154, 255, 0.2);
+        }
+
         body {
-            background-color: #0b1320;
-            color: #e8edf3;
-            padding: 40px 20px;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            background-image:
+                radial-gradient(circle at 15% 10%, rgba(59, 154, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(20, 90, 180, 0.07) 0%, transparent 45%);
+            min-height: 100vh;
+            line-height: 1.65;
+        }
+
+        header {
+            padding: 3rem 1.5rem;
             text-align: center;
         }
-        .container {
-            max-width: 800px;
+
+        .logo-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--primary-light);
+            margin: 0.6rem 0 1rem;
+            font-style: italic;
+        }
+
+        .sub-desc {
+            max-width: 720px;
             margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
         }
-        h1 {
-            font-size: 42px;
-            color: #42a5f5;
-            margin-bottom: 12px;
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem 5rem;
         }
-        .subtitle {
-            font-size: 18px;
-            color: #90a4ae;
-            margin-bottom: 40px;
+
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2.5rem;
         }
+
         .card {
-            background: rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid rgba(66, 165, 245, 0.2);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
-        h2 {
-            color: #64b5f6;
-            margin-bottom: 16px;
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(59, 154, 255, 0.45);
         }
-        p {
-            line-height: 1.7;
-            color: #c5d0dd;
-            margin-bottom: 12px;
+
+        .card h3 {
+            color: var(--primary-light);
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
         }
-        .info-line {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #78909c;
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+        }
+
+        .section-head {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .section-head h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-head span {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .info-footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b829e;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(59,154,255,0.12);
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1 class="logo-title">SentiX</h1>
+        <div class="tagline">make global change work for you</div>
+        <p class="sub-desc">
+            Multi-source satellite time-series remote sensing analysis platform, quantifying, visualizing and monitoring
+            land surface dynamics across the globe, turning raw satellite imagery into actionable change insights.
+        </p>
+    </header>
+
     <div class="container">
-        <h1>SentiX</h1>
-        <div class="subtitle">SentiX卫星遥感 · 时空数据分析与可视化平台</div>
+        <div class="section-head">
+            <h2>Platform Core Capabilities</h2>
+            <span>多源对地观测卫星 · 地表时序变化智能解析平台</span>
+        </div>
 
-        <div class="card">
-            <h2>站点部署测试页面</h2>
-            <p>本页面用于测试 GitHub 仓库静态部署、域名解析、Cloudflare 接入连通性。</p>
-            <p>项目定位：卫星影像处理、地表时序变化分析、遥感数据可视化展示。</p>
-
-            <div class="info-line">
-                Repository: sentix | 部署时间: 测试构建
+        <div class="grid-wrapper">
+            <div class="card">
+                <h3>Multi-Temporal Change Detection</h3>
+                <p>对比不同时期卫星影像，自动识别植被消长、水域变迁、建设用地扩张、滑坡及土地荒漠化等地表渐变与突变现象，量化变化幅度与关键时间节点。</p>
             </div>
+
+            <div class="card">
+                <h3>Multi-Source Satellite Data Processing</h3>
+                <p>兼容光学、雷达等各类主流卫星遥感数据集，统一完成大气校正、云量剔除、波段运算、植被水体建筑指数（NDVI、NDWI、NDBI）标准化预处理流程。</p>
+            </div>
+
+            <div class="card">
+                <h3>Spatial Visualization Output</h3>
+                <p>生成变化分级专题图、差值热力图、时序统计折线图表，直观展现区域长期演化规律，分析成果可导出，支撑科研研究、国土规划、生态环境监测复盘工作。</p>
+            </div>
+
+            <div class="card">
+                <h3>Custom Region Analysis</h3>
+                <p>支持自定义划定分析范围，面向城市扩张、湿地演变、生态修复、林木采伐、洪涝灾害评估等场景，开展定向批量地表变化监测分析。</p>
+            </div>
+        </div>
+
+        <div class="section-head">
+            <h2>Our Mission</h2>
+            <span>Turn global satellite observation data into understandable, usable decision support</span>
+        </div>
+        <div style="max-width:750px;margin:1.5rem auto;text-align:center;color:var(--text-secondary);">
+            <p>Global land surface is constantly reshaped by human activities and natural forces.
+            SentiX lowers the technical threshold for remote sensing data application, enabling researchers, planners and environmental practitioners
+            to track long-term land evolution conveniently, so that global change truly works for your research and practice.</p>
+        </div>
+
+        <div class="info-footer">
+            <p>SentiX | Satellite Land Change Analysis Platform</p>
+            <p>Repository: github.com/你的用户名/sentix | Deploy via Cloudflare Pages</p>
         </div>
     </div>
 </body>
